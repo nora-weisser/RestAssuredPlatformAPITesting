@@ -1,3 +1,5 @@
+package tests;
+
 import POJO.Footer;
 import POJO.Network;
 import builder.RequestSpecFactory;
@@ -12,7 +14,7 @@ import java.util.List;
 
 import static io.restassured.RestAssured.*;
 
-public class Basics {
+public class FooterTests {
     public static void main(String[] args) {
         RestAssured.baseURI = ConfigUtil.getBaseUrl();
 
