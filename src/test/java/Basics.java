@@ -1,5 +1,9 @@
+import POJO.Footer;
+import config.ConfigUtil;
 import io.github.cdimascio.dotenv.Dotenv;
 import io.restassured.RestAssured;
+import org.testng.Assert;
+
 import static io.restassured.RestAssured.*;
 
 
@@ -9,13 +13,12 @@ public class Basics {
         // when - Submit the API
         // then - validate the response
 
-        Dotenv dotenv = Dotenv.load();
+        RestAssured.baseURI = ConfigUtil.getBaseUrl();
 
-        RestAssured.baseURI = dotenv.get("BASE_URL");;
-
-        given().log().all()
-                .header("X-API-KEY",  dotenv.get("API_KEY"))
+        Footer response = given().log().all()
+                .header("X-API-KEY",  ConfigUtil.getApiKey())
                 .when().get("/api/cms/v1/footer")
-                .then().log().all().assertThat().statusCode(200);
+                .then().log().all().extract().as(Footer.class);
+        Assert.assertEquals(response.getId(), "page:FOOTER");
     }
 }
