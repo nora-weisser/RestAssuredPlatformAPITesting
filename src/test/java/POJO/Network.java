@@ -1,7 +1,10 @@
 package POJO;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public class Network {
-    private String type;
+    private NetworkType type;
     private String link;
 
     public String getLink() {
@@ -12,11 +15,11 @@ public class Network {
         this.link = link;
     }
 
-    public String getType() {
+    public NetworkType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(NetworkType type) {
         this.type = type;
     }
 }
