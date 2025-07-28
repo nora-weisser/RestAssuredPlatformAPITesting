@@ -9,7 +9,6 @@ import constants.ApiPaths;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
-
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
@@ -18,6 +17,7 @@ public class FooterTests {
     public static void main(String[] args) {
         RestAssured.baseURI = ConfigUtil.getBaseUrl();
 
+        // Step 4: Call the real API and validate response with extracted schema
         Footer response = given()
                 .spec(RequestSpecFactory.getDefaultSpec())
                 .when()

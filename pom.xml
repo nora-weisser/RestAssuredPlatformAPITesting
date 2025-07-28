@@ -44,11 +44,11 @@
             <version>2.19.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.swagger.parser.v3/swagger-parser -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-jsonSchema -->
         <dependency>
-            <groupId>io.swagger.parser.v3</groupId>
-            <artifactId>swagger-parser</artifactId>
-            <version>2.1.31</version>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jsonSchema</artifactId>
+            <version>2.19.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
