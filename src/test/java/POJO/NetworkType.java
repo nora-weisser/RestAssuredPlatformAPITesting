@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum NetworkType {
-    SLACK, LINKEDIN, EMAIL, WEBSITE, GITHUB, INSTAGRAM;
+    SLACK, LINKEDIN, EMAIL, WEBSITE, GITHUB, INSTAGRAM, TWITTER;
 
     @JsonCreator
     public static NetworkType fromValue(String value) {
