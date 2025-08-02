@@ -8,6 +8,7 @@ import io.restassured.RestAssured;
 import org.testng.Assert;
 
 import static io.restassured.RestAssured.*;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 
 public class FooterTests {
     public static void main(String[] args) {
@@ -21,6 +22,7 @@ public class FooterTests {
                 .spec(SpecBuilder.getResponseSpec())
                 .assertThat()
                 .statusCode(200)
+                .body(matchesJsonSchemaInClasspath("FooterSchema.json"))
                 .extract().as(Footer.class);
 
         Assert.assertEquals(response.getId(), "page:FOOTER", "Footer ID did not match");
